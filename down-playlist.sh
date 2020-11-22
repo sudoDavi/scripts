@@ -1,9 +1,15 @@
 #!/bin/bash
-if [ -z $1 ]; then
+DOWNLOAD_URL="Empty URL field";
+if [ -z "$1" ]; then
 	#Insert the link to the playlist here
 	DOWNLOAD_URL=MY_PLAYLIST
 else
-	DONWLOAD_URL=$1
+	DOWNLOAD_URL=$1
+fi
+
+if [ "$DOWNLOAD_URL" == "Empty URL field" ]; then
+	echo "Empty URL field, Aborting.";
+	exit;
 fi
 
 echo "Updating playlist local copy from URL: $DOWNLOAD_URL";
