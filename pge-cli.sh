@@ -25,7 +25,7 @@ elif [ "$1" == "new" ]; then
 	if [ -z "$2" -o $SECOND_PARAMETER_IS_BOOL == true ]; then
 		git clone https://github.com/OneLoneCoder/olcPixelGameEngine.git pgeProject;
 		cd pgeProject;
-		git rename origin upstream;
+		git remote rename origin upstream;
 		echo "Created new project";
 		echo "Removing unnecessary files";
 		if [ $SECOND_PARAMETER_IS_BOOL == true ]; then
@@ -39,7 +39,7 @@ elif [ "$1" == "new" ]; then
 	fi;
 	git clone https://github.com/OneLoneCoder/olcPixelGameEngine.git $2;
 	cd $2;
-	git rename origin upstream;
+	git remote rename origin upstream;
 	echo "Created new project";
 	echo "Removing unnecessary files";
 	if [ $USE_EXTENSIONS == true ]; then
